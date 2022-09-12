@@ -4,7 +4,6 @@ const Joi = require('@hapi/joi');
 const bodyParser = require('body-parser');
 const sendGrid = require('@sendgrid/mail');
 const cors = require('cors');
-const sendgridObj = require('./sendgridkey.json');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -25,7 +24,7 @@ app.post('/api/email', (req, res, next) => {
 
     console.log(req.body);
 
-    sendGrid.setApiKey(sendgridObj.key);
+    sendGrid.setApiKey('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');
     const msg = {
         to: 'roshan007191@gmail.com',
         from: 'dodo00119911@gmail.com',
